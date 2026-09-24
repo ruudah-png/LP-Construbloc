@@ -16,4 +16,8 @@ Abra `site/index.html` no navegador, ou sirva a pasta `site/` com qualquer servi
 ## Antes de publicar
 
 - WhatsApp: o número está em `site/index.html` como `5562982430522` (constante `WA` no script e nos `href`). Confirmar com o cliente.
-- Domínio: `canonical` e `og:image` usam `www.construbloc.com.br` como provisório.
+- Domínio: `canonical`, `og:url`, `og:image` e o JSON-LD usam `https://lp-construbloc.vercel.app/`. Trocar quando houver domínio próprio.
+
+## Deploy (Vercel)
+
+O `vercel.json` na raiz publica a pasta `site/` como site estático (sem build). Cada push no `main` gera um deploy de produção.
