@@ -180,6 +180,15 @@ h4{margin:0}
 .pillar strong{display:block;color:var(--cb-ink-900);font-size:17px;line-height:1.4;margin-bottom:8px}
 .pillar p{color:var(--cb-ink-500);font-size:15.5px;line-height:1.6}
 
+/* Promo (novidade na loja) */
+.promo{display:grid;gap:20px;align-items:center;margin-bottom:40px;padding:16px;background:var(--cb-blue-50);border:1px solid var(--cb-blue-100);border-radius:var(--radius-lg)}
+.promo-img{width:100%;max-width:360px;height:auto;margin:0 auto;border-radius:var(--radius-md);box-shadow:var(--shadow-md)}
+.promo-tag{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:var(--radius-xs);background:var(--cb-gold-500);color:var(--cb-blue-900);font:700 12px var(--font-label);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.promo h3{font-size:clamp(1.375rem,1.1rem + 1.2vw,2rem);margin-bottom:10px}
+.promo p{color:var(--cb-ink-500);font-size:16px;line-height:1.6;margin-bottom:20px}
+@media (min-width:600px){.promo .btn{width:auto}}
+@media (min-width:768px){.promo{grid-template-columns:minmax(240px,320px) 1fr;gap:36px;padding:24px;margin-bottom:56px}.promo-img{max-width:none}}
+
 /* Categories */
 .cat{display:flex;align-items:flex-start;gap:16px;min-height:100%;color:inherit;transition:transform var(--dur-base) var(--ease-out),box-shadow var(--dur-base) var(--ease-out),border-color var(--dur-base)}
 .cat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:transparent}
@@ -430,6 +439,18 @@ h4{margin:0}
 <!-- ============ 2. Por que a Construbloc ============ -->
 <section class="section" aria-labelledby="porque-title">
   <div class="wrap">
+    <article class="promo rv" aria-labelledby="promo-title">
+      <img class="promo-img" src="assets/img/ducha-zagonel-680.jpg" srcset="assets/img/ducha-zagonel-400.jpg 400w, assets/img/ducha-zagonel-680.jpg 680w" sizes="(min-width:768px) 320px, (min-width:392px) 360px, calc(100vw - 64px)" width="680" height="857" alt="Ducha Eletrônica Zagonel DuchaSS, novo lançamento disponível na Construbloc" loading="lazy" decoding="async">
+      <div>
+        <span class="promo-tag">Novo lançamento</span>
+        <h3 id="promo-title">Ducha Eletrônica Zagonel</h3>
+        <p>Fácil acionamento, ótima vazão e economia de energia. Disponível aqui na Construbloc.</p>
+        <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/5562982430522" data-wa="Olá! Quero saber o preço da Ducha Eletrônica Zagonel DuchaSS." data-cta="promo-ducha" target="_blank" rel="noopener">
+          <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Consultar preço no WhatsApp
+        </a>
+      </div>
+    </article>
+
     <div class="section-head rv">
       <span class="eyebrow">Por que a Construbloc</span>
       <h2 class="h2" id="porque-title">Por que Goiânia confia na Construbloc</h2>
