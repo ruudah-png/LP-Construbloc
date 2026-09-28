@@ -15,7 +15,7 @@ Abra `site/index.html` no navegador, ou sirva a pasta `site/` com qualquer servi
 
 ## Antes de publicar
 
-- WhatsApp: o número está em `site/index.html` como `5562982430522` (constante `WA` no script e nos `href`). Confirmar com o cliente.
+- WhatsApp: (62) 3579-1166, em `site/index.html` como `556235791166` (constante `WA` no script e nos `href`). Telefone para ligações: (62) 3091-1091 (`tel:+556230911091`).
 - Domínio: `canonical`, `og:url`, `og:image` e o JSON-LD usam `https://lp-construbloc.vercel.app/`. Trocar quando houver domínio próprio.
 
 ## Deploy (Vercel)

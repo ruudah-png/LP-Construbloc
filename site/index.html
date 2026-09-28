@@ -106,6 +106,12 @@ h4{margin:0}
 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:34px;gap:16px}
 .topbar span{display:inline-flex;align-items:center;gap:8px}
 .topbar .ic{width:15px;height:15px;color:var(--cb-gold-400)}
+.topbar-r{gap:24px !important}
+.topbar a{display:inline-flex;align-items:center;gap:8px;color:#fff}
+.topbar a:hover{color:var(--cb-gold-400)}
+.final .call{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:6px;font-weight:700;color:#fff;border-bottom:1px solid rgba(255,255,255,.4)}
+.final .call:hover{color:var(--cb-gold-400);border-color:var(--cb-gold-400)}
+.final .call .ic{width:18px;height:18px;color:var(--cb-gold-400)}
 @media (min-width:1024px){.topbar{display:block}}
 
 .header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--cb-line-200)}
@@ -331,7 +337,7 @@ h4{margin:0}
   "url":"https://lp-construbloc.vercel.app/",
   "image":"https://lp-construbloc.vercel.app/assets/img/og-image.png",
   "logo":"https://lp-construbloc.vercel.app/assets/img/logo-color.png",
-  "telephone":"+55 62 98243-0522",
+  "telephone":"+55 62 3091-1091",
   "priceRange":"$$",
   "paymentAccepted":"Cartão de crédito, PIX, Dinheiro, Faturamento",
   "address":{"@type":"PostalAddress","streetAddress":"Av. Madrid, 420 — Qd. 180, Lt. 05","addressLocality":"Goiânia","addressRegion":"GO","postalCode":"74330-550","addressCountry":"BR"},
@@ -368,6 +374,7 @@ h4{margin:0}
   <symbol id="i-star" viewBox="0 0 24 24"><path d="M11.53 2.3a.53.53 0 0 1 .95 0l2.31 4.68a2.12 2.12 0 0 0 1.6 1.16l5.16.76a.53.53 0 0 1 .3.9l-3.74 3.64a2.12 2.12 0 0 0-.61 1.88l.88 5.14a.53.53 0 0 1-.77.56l-4.62-2.43a2.12 2.12 0 0 0-1.97 0L6.4 21.01a.53.53 0 0 1-.77-.56l.88-5.14a2.12 2.12 0 0 0-.61-1.88L2.16 9.8a.53.53 0 0 1 .3-.91l5.16-.75a2.12 2.12 0 0 0 1.6-1.16z"/></symbol>
   <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></symbol>
   <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
   <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
@@ -382,7 +389,10 @@ h4{margin:0}
 <div class="topbar">
   <div class="wrap">
     <span><svg class="ic"><use href="#i-clock"/></svg>Aberto todos os dias, das 7h às 19h — inclusive domingos e feriados</span>
-    <span><svg class="ic"><use href="#i-pin"/></svg>Av. Madrid, 420 — Vila Boa, Goiânia</span>
+    <span class="topbar-r">
+      <a href="tel:+556230911091" data-cta="topbar-tel"><svg class="ic"><use href="#i-phone"/></svg>(62) 3091-1091</a>
+      <span><svg class="ic"><use href="#i-pin"/></svg>Av. Madrid, 420 — Vila Boa, Goiânia</span>
+    </span>
   </div>
 </div>
 <header class="header">
@@ -397,7 +407,7 @@ h4{margin:0}
       <a href="#como-comprar">Como comprar</a>
       <a href="#duvidas">Dúvidas</a>
     </nav>
-    <a class="btn btn-wa" href="https://wa.me/5562982430522" data-wa="Olá! Vim pelo site e quero um orçamento." data-cta="header" target="_blank" rel="noopener">
+    <a class="btn btn-wa" href="https://wa.me/556235791166" data-wa="Olá! Vim pelo site e quero um orçamento." data-cta="header" target="_blank" rel="noopener">
       <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span class="short">Orçamento</span><span class="full">Pedir orçamento</span>
     </a>
   </div>
@@ -414,7 +424,7 @@ h4{margin:0}
       <h1 id="hero-title">Material de construção em Goiânia com <mark>entrega no mesmo dia</mark> — de domingo a domingo.</h1>
       <p class="sub">Do primeiro tijolo ao último acabamento: cimento, areia, brita ensacada e toda a linha para sua obra. Frota própria, orçamento rápido e atendimento que resolve — inclusive nas entregas noturnas que os grandes não fazem.</p>
       <div class="hero-ctas" id="hero-ctas">
-        <a class="btn btn-wa btn-lg" href="https://wa.me/5562982430522" data-wa="Olá! Vim pelo site e quero solicitar um orçamento." data-cta="hero" target="_blank" rel="noopener">
+        <a class="btn btn-wa btn-lg" href="https://wa.me/556235791166" data-wa="Olá! Vim pelo site e quero solicitar um orçamento." data-cta="hero" target="_blank" rel="noopener">
           <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar orçamento no WhatsApp
         </a>
         <a class="btn btn-ghost-inv btn-lg" href="#produtos" data-cta="hero-produtos">Ver produtos</a>
@@ -473,7 +483,7 @@ h4{margin:0}
     </div>
     <div class="cta-row rv">
       <p>Precisa de material hoje?</p>
-      <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/5562982430522" data-wa="Olá! Preciso de material para hoje. Podem me passar um orçamento?" data-cta="porque" target="_blank" rel="noopener">
+      <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/556235791166" data-wa="Olá! Preciso de material para hoje. Podem me passar um orçamento?" data-cta="porque" target="_blank" rel="noopener">
         <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento no WhatsApp
       </a>
     </div>
@@ -516,34 +526,34 @@ h4{margin:0}
       <p class="lead">Do básico ao acabamento — as principais categorias que vendemos todos os dias:</p>
     </div>
     <ul class="grid g-cat">
-      <li class="rv"><a class="card cat" href="https://wa.me/5562982430522" data-wa="Olá! Quero um orçamento de areia e brita ensacada." data-cta="cat-areia" target="_blank" rel="noopener">
+      <li class="rv"><a class="card cat" href="https://wa.me/556235791166" data-wa="Olá! Quero um orçamento de areia e brita ensacada." data-cta="cat-areia" target="_blank" rel="noopener">
         <span class="icon-box"><svg class="ic" aria-hidden="true"><use href="#i-mountain"/></svg></span>
         <div><h3>Areia e Brita Ensacada</h3><p>Praticidade para pequenas e médias obras, sem sujeira e sem sobra.</p><span class="go">Pedir orçamento<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
       </a></li>
-      <li class="rv"><a class="card cat" href="https://wa.me/5562982430522" data-wa="Olá! Quero um orçamento de cimento." data-cta="cat-cimento" target="_blank" rel="noopener">
+      <li class="rv"><a class="card cat" href="https://wa.me/556235791166" data-wa="Olá! Quero um orçamento de cimento." data-cta="cat-cimento" target="_blank" rel="noopener">
         <span class="icon-box"><svg class="ic" aria-hidden="true"><use href="#i-package"/></svg></span>
         <div><h3>Cimento</h3><p>Marcas líderes com estoque garantido.</p><span class="go">Pedir orçamento<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
       </a></li>
-      <li class="rv"><a class="card cat" href="https://wa.me/5562982430522" data-wa="Olá! Quero um orçamento de tijolo e bloco." data-cta="cat-tijolo" target="_blank" rel="noopener">
+      <li class="rv"><a class="card cat" href="https://wa.me/556235791166" data-wa="Olá! Quero um orçamento de tijolo e bloco." data-cta="cat-tijolo" target="_blank" rel="noopener">
         <span class="icon-box"><svg class="ic" aria-hidden="true"><use href="#i-brick"/></svg></span>
         <div><h3>Tijolo e Bloco</h3><p>Cerâmicos, estruturais e de vedação.</p><span class="go">Pedir orçamento<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
       </a></li>
-      <li class="rv"><a class="card cat" href="https://wa.me/5562982430522" data-wa="Olá! Quero um orçamento de materiais básicos (ferro, argamassa, cal, telas)." data-cta="cat-basicos" target="_blank" rel="noopener">
+      <li class="rv"><a class="card cat" href="https://wa.me/556235791166" data-wa="Olá! Quero um orçamento de materiais básicos (ferro, argamassa, cal, telas)." data-cta="cat-basicos" target="_blank" rel="noopener">
         <span class="icon-box"><svg class="ic" aria-hidden="true"><use href="#i-shovel"/></svg></span>
         <div><h3>Materiais Básicos</h3><p>Ferro, argamassa, cal, telas e o que mais sua obra pedir.</p><span class="go">Pedir orçamento<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
       </a></li>
-      <li class="rv"><a class="card cat" href="https://wa.me/5562982430522" data-wa="Olá! Quero um orçamento de acabamento." data-cta="cat-acabamento" target="_blank" rel="noopener">
+      <li class="rv"><a class="card cat" href="https://wa.me/556235791166" data-wa="Olá! Quero um orçamento de acabamento." data-cta="cat-acabamento" target="_blank" rel="noopener">
         <span class="icon-box"><svg class="ic" aria-hidden="true"><use href="#i-roller"/></svg></span>
         <div><h3>Acabamento</h3><p>Revestimentos, louças, metais, tintas e o toque final.</p><span class="go">Pedir orçamento<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
       </a></li>
-      <li class="rv"><a class="card cat" href="https://wa.me/5562982430522" data-wa="Olá! Quero um orçamento de ferragens." data-cta="cat-ferragens" target="_blank" rel="noopener">
+      <li class="rv"><a class="card cat" href="https://wa.me/556235791166" data-wa="Olá! Quero um orçamento de ferragens." data-cta="cat-ferragens" target="_blank" rel="noopener">
         <span class="icon-box"><svg class="ic" aria-hidden="true"><use href="#i-wrench"/></svg></span>
         <div><h3>Ferragens em Geral</h3><p>Ferramentas, fixadores e itens de manutenção.</p><span class="go">Pedir orçamento<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
       </a></li>
     </ul>
     <div class="cta-row rv">
       <p>Não encontrou o que procura?</p>
-      <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/5562982430522" data-wa="Olá! Estou procurando um material e queria saber se vocês têm." data-cta="produtos" target="_blank" rel="noopener">
+      <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/556235791166" data-wa="Olá! Estou procurando um material e queria saber se vocês têm." data-cta="produtos" target="_blank" rel="noopener">
         <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Fale com a gente no WhatsApp
       </a>
     </div>
@@ -567,7 +577,7 @@ h4{margin:0}
     </ul>
     <div class="cta-row rv">
       <p>Manda a lista que a gente responde na hora.</p>
-      <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/5562982430522" data-wa="Olá! Quero mandar minha lista de material para orçamento." data-cta="servicos" target="_blank" rel="noopener">
+      <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/556235791166" data-wa="Olá! Quero mandar minha lista de material para orçamento." data-cta="servicos" target="_blank" rel="noopener">
         <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Mandar minha lista no WhatsApp
       </a>
     </div>
@@ -585,17 +595,17 @@ h4{margin:0}
       <article class="card aud rv">
         <div class="aud-head"><span class="icon-box"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span><h3>Consumidor final</h3></div>
         <p>Está reformando ou construindo sua casa? A gente ajuda a calcular a quantidade certa e entrega no seu horário.</p>
-        <a class="link" href="https://wa.me/5562982430522" data-wa="Olá! Estou reformando/construindo e preciso de ajuda para calcular o material." data-cta="publico-consumidor" target="_blank" rel="noopener">Calcular meu material<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="link" href="https://wa.me/556235791166" data-wa="Olá! Estou reformando/construindo e preciso de ajuda para calcular o material." data-cta="publico-consumidor" target="_blank" rel="noopener">Calcular meu material<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </article>
       <article class="card aud rv">
         <div class="aud-head"><span class="icon-box"><svg class="ic" aria-hidden="true"><use href="#i-hardhat"/></svg></span><h3>Pedreiros e mestres de obra</h3></div>
         <p>Pedido pelo WhatsApp, orçamento rápido e entrega no canteiro no mesmo dia. Sem burocracia.</p>
-        <a class="link" href="https://wa.me/5562982430522" data-wa="Olá! Sou pedreiro/mestre de obra e quero fazer um pedido." data-cta="publico-pedreiro" target="_blank" rel="noopener">Mandar meu pedido<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="link" href="https://wa.me/556235791166" data-wa="Olá! Sou pedreiro/mestre de obra e quero fazer um pedido." data-cta="publico-pedreiro" target="_blank" rel="noopener">Mandar meu pedido<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </article>
       <article class="card aud rv">
         <div class="aud-head"><span class="icon-box"><svg class="ic" aria-hidden="true"><use href="#i-ruler"/></svg></span><h3>Engenheiros, arquitetos e construtoras</h3></div>
         <p>Faturamento para empresas, atendimento consultivo e capacidade para atender obras de qualquer porte, em qualquer horário.</p>
-        <a class="link" href="https://wa.me/5562982430522" data-wa="Olá! Represento uma empresa/construtora e quero falar com o comercial sobre faturamento." data-cta="publico-empresa" target="_blank" rel="noopener">Falar com o comercial<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="link" href="https://wa.me/556235791166" data-wa="Olá! Represento uma empresa/construtora e quero falar com o comercial sobre faturamento." data-cta="publico-empresa" target="_blank" rel="noopener">Falar com o comercial<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </article>
     </div>
   </div>
@@ -621,7 +631,7 @@ h4{margin:0}
       <li class="seal"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg>Mais de uma década em Goiânia</li>
     </ul>
     <div class="cta-row rv" style="position:relative">
-      <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/5562982430522" data-wa="Olá! Vim pelo site e quero fazer um orçamento com a Construbloc." data-cta="numeros" target="_blank" rel="noopener">
+      <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/556235791166" data-wa="Olá! Vim pelo site e quero fazer um orçamento com a Construbloc." data-cta="numeros" target="_blank" rel="noopener">
         <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Fazer meu orçamento agora
       </a>
     </div>
@@ -643,7 +653,7 @@ h4{margin:0}
     </ul>
     <div class="cta-row rv">
       <p>Quer saber o desconto à vista ou as condições de faturamento?</p>
-      <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/5562982430522" data-wa="Olá! Quero saber as condições de pagamento (desconto à vista / faturamento)." data-cta="pagamento" target="_blank" rel="noopener">
+      <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/556235791166" data-wa="Olá! Quero saber as condições de pagamento (desconto à vista / faturamento)." data-cta="pagamento" target="_blank" rel="noopener">
         <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Consultar condições no WhatsApp
       </a>
     </div>
@@ -664,7 +674,7 @@ h4{margin:0}
       <li class="step rv"><span class="step-n" aria-hidden="true">4</span><div><h3>Recebe na obra ou retira na loja</h3><p>Entregamos no mesmo dia em Goiânia — inclusive à noite, se sua obra precisar.</p></div></li>
     </ol>
     <div class="cta-row rv">
-      <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/5562982430522" data-wa="Olá! Quero começar meu pedido. Segue minha lista:" data-cta="como-comprar" target="_blank" rel="noopener">
+      <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/556235791166" data-wa="Olá! Quero começar meu pedido. Segue minha lista:" data-cta="como-comprar" target="_blank" rel="noopener">
         <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Começar pelo WhatsApp agora
       </a>
     </div>
@@ -689,7 +699,7 @@ h4{margin:0}
     </div>
     <div class="cta-row rv">
       <p>Ficou com alguma dúvida?</p>
-      <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/5562982430522" data-wa="Olá! Tenho uma dúvida sobre a Construbloc." data-cta="faq" target="_blank" rel="noopener">
+      <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/556235791166" data-wa="Olá! Tenho uma dúvida sobre a Construbloc." data-cta="faq" target="_blank" rel="noopener">
         <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Tirar dúvida no WhatsApp
       </a>
     </div>
@@ -702,10 +712,11 @@ h4{margin:0}
   <div class="wrap" style="position:relative">
     <h2 id="final-title">Sua obra não pode esperar. A gente também não.</h2>
     <p class="lead">Manda sua lista de material agora e receba o orçamento em minutos. Se fechar, a entrega pode ser hoje mesmo.</p>
-    <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/5562982430522" data-wa="Olá! Quero pedir um orçamento. Segue minha lista de material:" data-cta="final" target="_blank" rel="noopener">
+    <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/556235791166" data-wa="Olá! Quero pedir um orçamento. Segue minha lista de material:" data-cta="final" target="_blank" rel="noopener">
       <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento no WhatsApp
     </a>
     <p class="note">Atendimento das 7h às 19h, todos os dias.</p>
+    <a class="call" href="tel:+556230911091" data-cta="final-tel"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Prefere ligar? (62) 3091-1091</a>
   </div>
 </section>
 
@@ -733,7 +744,8 @@ h4{margin:0}
       <div>
         <h2>Contato e redes</h2>
         <ul>
-          <li><a href="https://wa.me/5562982430522" data-wa="Olá! Vim pelo site da Construbloc." data-cta="footer-wa" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a></li>
+          <li><a href="https://wa.me/556235791166" data-wa="Olá! Vim pelo site da Construbloc." data-cta="footer-wa" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp: (62) 3579-1166</a></li>
+          <li><a href="tel:+556230911091" data-cta="footer-tel"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Telefone: (62) 3091-1091</a></li>
           <li><a href="https://www.instagram.com/construbloc_/" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-ig"/></svg>@construbloc_</a></li>
           <li><a href="https://www.mercadolivre.com.br/loja/construbloc" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-bag"/></svg>Loja Oficial no Mercado Livre</a></li>
         </ul>
@@ -745,18 +757,18 @@ h4{margin:0}
 
 <!-- WhatsApp: barra fixa no mobile / botão flutuante no desktop -->
 <div class="mbar" id="mbar" aria-hidden="true">
-  <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/5562982430522" data-wa="Olá! Vim pelo site e quero um orçamento." data-cta="barra-mobile" target="_blank" rel="noopener" tabindex="-1">
+  <a class="btn btn-wa btn-lg btn-block" href="https://wa.me/556235791166" data-wa="Olá! Vim pelo site e quero um orçamento." data-cta="barra-mobile" target="_blank" rel="noopener" tabindex="-1">
     <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento no WhatsApp
   </a>
 </div>
-<a class="fab" href="https://wa.me/5562982430522" data-wa="Olá! Vim pelo site e quero um orçamento." data-cta="flutuante" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+<a class="fab" href="https://wa.me/556235791166" data-wa="Olá! Vim pelo site e quero um orçamento." data-cta="flutuante" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>
 </a>
 
 <script>
 (function(){
   // Número do WhatsApp (DDI + DDD + número, só dígitos). Troque aqui e nos href="https://wa.me/..." do HTML.
-  var WA = '5562982430522';
+  var WA = '556235791166';
 
   // Mensagem pré-preenchida por CTA — o time comercial sabe de onde o lead veio.
   document.querySelectorAll('[data-wa]').forEach(function(a){
