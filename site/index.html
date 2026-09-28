@@ -17,6 +17,7 @@
 
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" as="image" type="image/webp" media="(min-width:1024px)" imagesrcset="assets/img/loja-construbloc-560.webp 560w, assets/img/loja-construbloc-860.webp 860w" imagesizes="420px" fetchpriority="high">
 
 <!-- Fontes: carregamento não bloqueante (o texto aparece na hora com a fonte de fallback) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -139,16 +140,33 @@ h4{margin:0}
 @media (min-width:768px){.hero{padding-top:56px}.hero-mark{width:760px;right:-100px}}
 @media (min-width:1024px){.hero{padding:72px 0 calc(96px + var(--roof))}.hero .wrap{grid-template-columns:1.25fr .75fr;gap:56px}}
 
-.hero-panel{display:none}
+/* Foto do hero: só no desktop (no mobile o <picture> entrega um GIF de 1px e nada é baixado) */
+.hero-photo{display:none}
 @media (min-width:1024px){
-  .hero-panel{display:block;position:relative;background:var(--cb-blue-900);border-radius:var(--radius-md);padding:32px 28px;box-shadow:var(--shadow-lg);clip-path:polygon(0 24px,100% 0,100% 100%,0 100%);padding-top:52px}
-  .hero-panel h2{font-size:20px;color:#fff;margin-bottom:20px}
-  .hero-panel li{display:flex;gap:14px;padding:14px 0;border-top:1px solid rgba(255,255,255,.1)}
-  .hero-panel li:first-child{border-top:0;padding-top:0}
-  .hero-panel .ic{color:var(--cb-gold-400);width:26px;height:26px}
-  .hero-panel strong{display:block;color:#fff;font-size:16px;margin-bottom:2px}
-  .hero-panel p{font-size:14px;line-height:1.5;color:rgba(255,255,255,.72)}
+  .hero-photo{display:block;position:relative;margin:0}
+  .hero-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius-md);clip-path:polygon(0 10%,100% 0,100% 100%,0 100%);box-shadow:var(--shadow-lg);background:var(--cb-blue-700)}
+  .hero-photo figcaption{position:absolute;left:-20px;bottom:28px;display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:var(--radius-md);box-shadow:var(--shadow-lg);font-size:14px;line-height:1.3;color:var(--cb-ink-700)}
+  .hero-photo figcaption strong{display:block;color:var(--cb-blue-600)}
+  .hero-photo figcaption .ic{color:var(--cb-gold-600);width:24px;height:24px}
 }
+
+/* Galeria da loja */
+.gallery{display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-right:calc(-1 * var(--gutter));padding-right:var(--gutter)}
+.gallery::-webkit-scrollbar{display:none}
+.gallery li{scroll-snap-align:start}
+.gallery figure{position:relative;margin:0;border-radius:var(--radius-md);overflow:hidden;background:var(--cb-line-200)}
+.gallery img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;transition:transform .4s var(--ease-out)}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:32px 14px 12px;background:linear-gradient(to top,rgba(0,8,56,.85),rgba(0,8,56,0));color:#fff;font:700 13px/1.25 var(--font-label);letter-spacing:.12em;text-transform:uppercase}
+.gallery-hint{display:flex;align-items:center;gap:6px;margin-top:12px;font-size:13px;color:var(--cb-ink-500)}
+.gallery-hint .ic{width:16px;height:16px}
+@media (min-width:600px){.gallery{grid-auto-columns:44%}}
+@media (min-width:1024px){
+  .gallery{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);gap:16px;overflow:visible;margin-right:0;padding-right:0}
+  .gallery figure:hover img{transform:scale(1.04)}
+  .gallery-hint{display:none}
+}
+.btn-primary{background:var(--cb-blue-600);color:#fff}
+.btn-primary:hover{background:var(--cb-blue-700)}
 
 /* ============ Trust bar ============ */
 .trust{position:relative;z-index:2;margin-top:calc(-1 * var(--roof) - 8px)}
@@ -374,6 +392,7 @@ h4{margin:0}
       <img src="assets/img/logo-color.png" width="280" height="141" alt="Construbloc — Materiais de construção e ferragista em Goiânia" fetchpriority="high">
     </a>
     <nav class="nav" aria-label="Seções">
+      <a href="#loja">A loja</a>
       <a href="#produtos">Produtos</a>
       <a href="#servicos">Serviços</a>
       <a href="#como-comprar">Como comprar</a>
@@ -404,14 +423,13 @@ h4{margin:0}
       <p class="hero-note"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>Atendimento das 7h às 19h, todos os dias.</p>
     </div>
 
-    <aside class="hero-panel" aria-label="Entregas">
-      <h2>Sua obra recebe hoje</h2>
-      <ul>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-truck"/></svg><div><strong>Entrega no mesmo dia</strong><p>Frota própria e prazo real de horas, não de dias.</p></div></li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-moon"/></svg><div><strong>Entrega noturna pré-agendada</strong><p>Para shoppings, condomínios e locais com restrição de horário.</p></div></li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg><div><strong>Orçamento rápido</strong><p>Você manda a lista, a gente responde na hora.</p></div></li>
-      </ul>
-    </aside>
+    <figure class="hero-photo">
+      <picture>
+        <source media="(min-width:1024px)" srcset="assets/img/loja-construbloc-560.webp 560w, assets/img/loja-construbloc-860.webp 860w" sizes="420px" type="image/webp">
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="860" height="1075" alt="Loja Construbloc em Goiânia: balcão com a placa Aberto sábados, domingos e feriados" fetchpriority="high" decoding="async">
+      </picture>
+      <figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span><strong>Av. Madrid, 420</strong>Vila Boa, Goiânia</span></figcaption>
+    </figure>
   </div>
 </section>
 
@@ -463,8 +481,35 @@ h4{margin:0}
   </div>
 </section>
 
+<!-- ============ Nossa loja (galeria) ============ -->
+<section class="section alt" id="loja" aria-labelledby="loja-title">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Nossa loja</span>
+      <h2 class="h2" id="loja-title">Conheça a Construbloc por dentro</h2>
+      <p class="lead">Av. Madrid, 420 — Vila Boa, Goiânia. Aberta de domingo a domingo, das 7h às 19h.</p>
+    </div>
+    <ul class="gallery" aria-label="Fotos da loja">
+      <li><figure><img src="assets/img/loja-visao-geral-640.webp" srcset="assets/img/loja-visao-geral-400.webp 400w, assets/img/loja-visao-geral-640.webp 640w" sizes="(min-width:1024px) 285px, (min-width:600px) 44vw, 78vw" width="640" height="800" alt="Vista do alto da loja de material de construção Construbloc em Vila Boa, Goiânia" loading="lazy" decoding="async"><figcaption>Loja completa</figcaption></figure></li>
+      <li><figure><img src="assets/img/loja-tintas-640.webp" srcset="assets/img/loja-tintas-400.webp 400w, assets/img/loja-tintas-640.webp 640w" sizes="(min-width:1024px) 285px, (min-width:600px) 44vw, 78vw" width="640" height="800" alt="Corredor de tintas, sprays e químicos na Construbloc" loading="lazy" decoding="async"><figcaption>Tintas e sprays</figcaption></figure></li>
+      <li><figure><img src="assets/img/loja-iluminacao-640.webp" srcset="assets/img/loja-iluminacao-400.webp 400w, assets/img/loja-iluminacao-640.webp 640w" sizes="(min-width:1024px) 285px, (min-width:600px) 44vw, 78vw" width="640" height="800" alt="Painéis e lâmpadas de LED na seção de iluminação da Construbloc" loading="lazy" decoding="async"><figcaption>Iluminação LED</figcaption></figure></li>
+      <li><figure><img src="assets/img/loja-fechaduras-640.webp" srcset="assets/img/loja-fechaduras-400.webp 400w, assets/img/loja-fechaduras-640.webp 640w" sizes="(min-width:1024px) 285px, (min-width:600px) 44vw, 78vw" width="640" height="800" alt="Expositor de fechaduras, cadeados e ferragens na Construbloc" loading="lazy" decoding="async"><figcaption>Fechaduras e ferragens</figcaption></figure></li>
+      <li><figure><img src="assets/img/loja-metais-640.webp" srcset="assets/img/loja-metais-400.webp 400w, assets/img/loja-metais-640.webp 640w" sizes="(min-width:1024px) 285px, (min-width:600px) 44vw, 78vw" width="640" height="800" alt="Torneiras, misturadores e metais para banheiro e cozinha na Construbloc" loading="lazy" decoding="async"><figcaption>Metais e acabamento</figcaption></figure></li>
+      <li><figure><img src="assets/img/loja-ferramentas-640.webp" srcset="assets/img/loja-ferramentas-400.webp 400w, assets/img/loja-ferramentas-640.webp 640w" sizes="(min-width:1024px) 285px, (min-width:600px) 44vw, 78vw" width="640" height="800" alt="Corredor de ferramentas, buchas e fixadores na Construbloc" loading="lazy" decoding="async"><figcaption>Ferramentas e fixadores</figcaption></figure></li>
+      <li><figure><img src="assets/img/loja-pintura-640.webp" srcset="assets/img/loja-pintura-400.webp 400w, assets/img/loja-pintura-640.webp 640w" sizes="(min-width:1024px) 285px, (min-width:600px) 44vw, 78vw" width="640" height="800" alt="Parede de rolos, pincéis e acessórios de pintura na Construbloc" loading="lazy" decoding="async"><figcaption>Acessórios de pintura</figcaption></figure></li>
+      <li><figure><img src="assets/img/loja-eletrica-640.webp" srcset="assets/img/loja-eletrica-400.webp 400w, assets/img/loja-eletrica-640.webp 640w" sizes="(min-width:1024px) 285px, (min-width:600px) 44vw, 78vw" width="640" height="800" alt="Materiais elétricos e utilidades na Construbloc" loading="lazy" decoding="async"><figcaption>Elétrica e utilidades</figcaption></figure></li>
+    </ul>
+    <p class="gallery-hint" aria-hidden="true">Arraste para ver mais<svg class="ic"><use href="#i-arrow"/></svg></p>
+    <div class="cta-row rv">
+      <a class="btn btn-primary btn-lg btn-block" href="https://www.google.com/maps/search/?api=1&amp;query=Construbloc%20Av.%20Madrid%20420%20Vila%20Boa%20Goi%C3%A2nia" data-cta="loja-mapa" target="_blank" rel="noopener">
+        <svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Como chegar na loja
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 3. Produtos ============ -->
-<section class="section alt" id="produtos" aria-labelledby="produtos-title">
+<section class="section" id="produtos" aria-labelledby="produtos-title">
   <div class="wrap">
     <div class="section-head rv">
       <span class="eyebrow">Produtos</span>
